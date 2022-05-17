@@ -12,6 +12,7 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
 const itemEl = images.map(image => {
   const item = document.createElement("li")
   item.classList = "gallery__item"
