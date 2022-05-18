@@ -4,23 +4,39 @@
 
 
 const onClickDecrementBtn = document.querySelector('[data-action="decrement"]')
-console.dir(onClickDecrementBtn)
 const onClickIncermentBtn = document.querySelector('[data-action="increment"]')
-console.log(onClickIncermentBtn)
+const valueEl = document.querySelector("#value")
+const counterEl = document.querySelector("#counter")
+
 onClickDecrementBtn.style.borderRadius = "50%"
 onClickDecrementBtn.style.borderColor = "#0000ff"
 onClickDecrementBtn.style.backgroundColor = "#00feffe6"
+onClickDecrementBtn.style.fontSize = "30px"
+onClickDecrementBtn.style.color = "#ff9c00ed"
 onClickIncermentBtn.style.borderRadius = "50%"
 onClickIncermentBtn.style.borderColor = "#ff5c00"
 onClickIncermentBtn.style.backgroundColor = "#ff9c00ed"
-    
-const counterValue = document.querySelector("#counter")
-console.log(counterValue)
+onClickIncermentBtn.style.fontSize = "30px"
+onClickIncermentBtn.style.color = "#00feffe6"
 
+valueEl.style.fontSize = "50px"
+valueEl.style.marginLeft = "50px"
+valueEl.style.marginRight = "50px"
+
+// console.dir(counterValue)
+
+let counterValue = 0
+console.log(counterValue)
 onClickDecrementBtn.addEventListener("click", () => {
-    counterValue.children[1] +=1 ;
+ 
+    counterValue -= 1;
+        console.log(counterValue)
+        valueEl.innerHTML = counterValue
+// const counterValue = valueEl
 })
 onClickIncermentBtn.addEventListener("click", () => {
-    counterValue.textContent++;
+    counterValue += 1;
+    console.log(counterValue)
+    valueEl.innerHTML = counterValue
 })
 
