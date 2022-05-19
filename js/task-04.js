@@ -13,6 +13,7 @@ onClickDecrementBtn.style.borderColor = "#0000ff"
 onClickDecrementBtn.style.backgroundColor = "#00feffe6"
 onClickDecrementBtn.style.fontSize = "30px"
 onClickDecrementBtn.style.color = "#ff9c00ed"
+
 onClickIncermentBtn.style.borderRadius = "50%"
 onClickIncermentBtn.style.borderColor = "#ff5c00"
 onClickIncermentBtn.style.backgroundColor = "#ff9c00ed"
@@ -23,20 +24,17 @@ valueEl.style.fontSize = "50px"
 valueEl.style.marginLeft = "50px"
 valueEl.style.marginRight = "50px"
 
-// console.dir(counterValue)
-
 let counterValue = 0
-console.log(counterValue)
+
 onClickDecrementBtn.addEventListener("click", () => {
- 
     counterValue -= 1;
-        console.log(counterValue)
-        valueEl.innerHTML = counterValue
-// const counterValue = valueEl
+    console.log(counterValue)
+    valueEl.textContent = counterValue
 })
+
 onClickIncermentBtn.addEventListener("click", () => {
     counterValue += 1;
     console.log(counterValue)
-    valueEl.innerHTML = counterValue
+    valueEl.textContent = counterValue
 })
 
