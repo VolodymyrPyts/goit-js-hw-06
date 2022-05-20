@@ -7,18 +7,18 @@ const refs = {
     nameOutputField: document.querySelector("#name-output"),
 }
 
-refs.areaInputName.addEventListener("input", fieldOutput);
+refs.areaInputName.addEventListener("input", onFieldOutput);
 const outputEl = "Anonymous"
 
-function fieldOutput(event) {
- 
-    if (refs.areaInputName !== "") {
-        refs.areaInputName = event.currentTarget.value;
-        console.log(refs.areaInputName)
-        refs.nameOutputField.textContent = refs.areaInputName
-        
-    } else {
+function onFieldOutput(event) {
+    event.preventDefault();
+    refs.areaInputName = event.currentTarget.value;
+    console.log(refs.areaInputName)
+    refs.nameOutputField.textContent = refs.areaInputName
+    
+    if (refs.areaInputName === "") {
         refs.areaInputName = outputEl
         refs.nameOutputField.textContent = refs.areaInputName
+        
     }
 }
