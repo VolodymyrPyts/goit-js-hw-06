@@ -16,5 +16,4 @@ function onInputWrite(event) {
     event.preventDefault();
     const sizeText = event.currentTarget.value + "px"
     textEl.style.fontSize = sizeText
-    
 }

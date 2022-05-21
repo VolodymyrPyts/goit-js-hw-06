@@ -17,8 +17,6 @@ function onFieldOutput(event) {
     refs.nameOutputField.textContent = refs.areaInputName
     
     if (refs.areaInputName === "") {
-        refs.areaInputName = outputEl
-        refs.nameOutputField.textContent = refs.areaInputName
-        
+        refs.nameOutputField.textContent = outputEl
     }
 }

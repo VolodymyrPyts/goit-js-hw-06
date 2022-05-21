@@ -28,13 +28,11 @@ let counterValue = 0
 
 onClickDecrementBtn.addEventListener("click", () => {
     counterValue -= 1;
-    console.log(counterValue)
     valueEl.textContent = counterValue
 })
 
 onClickIncermentBtn.addEventListener("click", () => {
     counterValue += 1;
-    console.log(counterValue)
     valueEl.textContent = counterValue
 })
 
