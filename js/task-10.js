@@ -1,4 +1,7 @@
-// Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество элементов в input и нажимает кнопку Создать, после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
+// Напиши скрипт создания и очистки коллекции элементов.
+// Пользователь вводит количество элементов в input и 
+// нажимает кнопку Создать, после чего рендерится коллекция.
+// При нажатии на кнопку Очистить, коллекция элементов очищается.
 
 // <div id="controls">
 //   <input type="number" min="1" max="100" step="1" />
@@ -21,4 +24,22 @@
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
+const refs = {
+  inpytEl: document.querySelector("input"),
+  btnCreateEl: document.querySelector("[data-create]"),
+  btnDestroyEl: document.querySelector("[data-destroy]"),
+  boxesEl: document.querySelector("#boxes"), 
+}
+
+refs.btnDestroyEl.addEventListener("click", onRestetInput)
+
+function onRestetInput(event) {
+ 
+  refs.inpytEl.addEventListener('submit', () => {
+    refs.inpytEl.reset();
+  })
+ 
+  
 }
