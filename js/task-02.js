@@ -19,7 +19,7 @@ const itemEl = ingredients.map(ingredient => {
   
   return item
 })
-console.log(itemEl)
+
 const listEl = document.querySelector("#ingredients")
 listEl.append(...itemEl)
 
