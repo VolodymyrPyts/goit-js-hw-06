@@ -19,4 +19,5 @@ function onFieldOutput(event) {
     if (refs.areaInputName === "") {
         refs.nameOutputField.textContent = outputEl
     }
+    
 }

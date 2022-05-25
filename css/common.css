@@ -34,3 +34,9 @@ margin: -15px
 .gallery__list { 
   margin: 15px;
  }
+
+ #boxes {
+   display: flex;
+   flex-wrap: wrap;
+  
+ }

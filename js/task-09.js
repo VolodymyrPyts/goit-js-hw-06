@@ -11,7 +11,6 @@ const refs = {
 refs.buttonEl.addEventListener("click", onBthClick)
 
 function onBthClick(event) {
-  console.log("ckick");
   refs.bodyEl.style.backgroundColor = getRandomHexColor();
   refs.spanColorEl.textContent = getRandomHexColor();
   }

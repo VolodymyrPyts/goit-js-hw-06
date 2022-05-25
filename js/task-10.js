@@ -1,45 +1,42 @@
-// Напиши скрипт создания и очистки коллекции элементов.
-// Пользователь вводит количество элементов в input и 
-// нажимает кнопку Создать, после чего рендерится коллекция.
-// При нажатии на кнопку Очистить, коллекция элементов очищается.
-
-// <div id="controls">
-//   <input type="number" min="1" max="100" step="1" />
-//   <button type="button" data-create>Create</button>
-//   <button type="button" data-destroy>Destroy</button>
-// </div>
-
-// <div id="boxes"></div>
-// Создай функцию createBoxes(amount), которая принимает один параметр - число. Функция создает столько <div>, сколько указано в amount и добавляет их в div#boxes.
-
-// Размеры самого первого <div> - 30px на 30px.
-// Каждый элемент после первого, должен быть шире и выше предыдущего на 10px.
-// Все элементы должены иметь случайный цвет фона в формате HEX. Используй готовую функцию getRandomHexColor для получения цвета.
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, 0)}`;
-// }
-// Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 const refs = {
+
   inpytEl: document.querySelector("input"),
   btnCreateEl: document.querySelector("[data-create]"),
   btnDestroyEl: document.querySelector("[data-destroy]"),
-  boxesEl: document.querySelector("#boxes"), 
+  boxesEl: document.querySelector("#boxes"),
+  controlsEl: document.querySelector(".controls")
 }
 
-refs.btnDestroyEl.addEventListener("click", onRestetInput)
+refs.btnCreateEl.addEventListener('click', onClickCreateBtn)
 
-function onRestetInput(event) {
+function onClickCreateBtn() {
+  const amount = refs.inpytEl.value;
+  let widthBox = 20
+  let heightBox = 20
+  for (let i = 1; i <= amount; i += 1) {
+    const item = document.createElement("div")
+    widthBox = widthBox + 10;
+    heightBox = heightBox + 10;
+
+    item.classList = 'box'
+    item.style.backgroundColor = getRandomHexColor()
+    item.style.width = widthBox + "px"
+    item.style.height = heightBox + "px"
+
+    refs.boxesEl.append(item)
+  }
+} 
+
+refs.btnDestroyEl.addEventListener('click', onClickDestroyBtn)
  
-  refs.inpytEl.addEventListener('submit', () => {
-    refs.inpytEl.reset();
-  })
- 
-  
-}
+function onClickDestroyBtn() {
+  refs.inpytEl.value = ""
+  const boxesEl = document.querySelectorAll(".box");
+  for (const box of boxesEl) {
+    box.remove();
+  }
+} 
