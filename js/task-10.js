@@ -15,22 +15,19 @@ const refs = {
 
 refs.btnCreateEl.addEventListener('click', onClickCreateBtn)
 
+
 function onClickCreateBtn() {
   const amount = refs.inpytEl.value;
-  let widthBox = 20
-  let heightBox = 20
-  for (let i = 1; i <= amount; i += 1) {
-    const item = document.createElement("div")
-    widthBox = widthBox + 10;
-    heightBox = heightBox + 10;
+ 
+    for (let i = 1; i <= amount; i += 1) {
+      const item = document.createElement("div")
 
-    item.classList = 'box'
-    item.style.backgroundColor = getRandomHexColor()
-    item.style.width = widthBox + "px"
-    item.style.height = heightBox + "px"
-
-    refs.boxesEl.append(item)
-  }
+      item.classList = 'box'
+      item.style.backgroundColor = getRandomHexColor()
+      item.style.width = (i * 10 + 30) + "px"
+      item.style.height = (i * 10 + 30) + "px"
+      refs.boxesEl.append(item)
+    }
 } 
 
 refs.btnDestroyEl.addEventListener('click', onClickDestroyBtn)
@@ -38,7 +35,7 @@ refs.btnDestroyEl.addEventListener('click', onClickDestroyBtn)
 function onClickDestroyBtn() {
   refs.inpytEl.value = ""
   const boxesEl = document.querySelectorAll(".box");
-  for (const box of boxesEl) {
-    box.remove();
-  }
+    boxesEl.forEach(function (number, index) {
+    number.remove();
+  })
 } 
