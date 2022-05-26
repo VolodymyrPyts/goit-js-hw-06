@@ -13,7 +13,13 @@ const images = [
   },
 ];
 
+// const onCreateMarkupe = images.map(({ url, alt }) => `<li class = "gallery__list"><img src = ${url} alt = ${alt} class = "gallery__images"  width ="400px" height = "100%" ></img></li>`)
+//   .join('')
+
 const listEl = document.
   querySelector(".gallery")
+  // .insertAdjacentHTML("afterbegin", onCreateMarkupe);
   .insertAdjacentHTML("afterbegin", images.map(({ url, alt }) => `<li class = "gallery__list"><img src = ${url} alt = ${alt} class = "gallery__images"  width ="400px" height = "100%" ></img></li>`).join(''));
+  
+
 
